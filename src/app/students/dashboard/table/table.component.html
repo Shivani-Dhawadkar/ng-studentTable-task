@@ -1,0 +1,30 @@
+<table class="table table-bordered table-responsive">
+    <thead>
+        <tr>
+            <th>Sr.no.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody><tr *ngFor="let item of tableArray, index as i ">
+        <td>{{i+1}}</td>
+        <td>{{item.fname}}</td>
+        <td>{{item.lname}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.contact}}</td>
+        <td>
+            <!-- <button mat-raised-button color="primary">Edit</button>
+            <button class="btn btn-primary"  (click)="onedit(item)">Edit</button> -->
+            <mat-icon aria-hidden="false" class="editbutton" aria-label="Example edit icon" fontIcon="edit" (click)="onedit(item)"></mat-icon>
+
+        </td>
+        <td>
+            <mat-icon aria-hidden="false" class="editbutton" aria-label="Example delete icon" fontIcon="delete" (click)="ondelete(item.id)"></mat-icon>
+            <!-- <button class="btn btn-danger" (click)="ondelete(item.id)">Delete</button> -->
+        </td>
+    </tr></tbody>
+</table>
